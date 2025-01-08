@@ -1,9 +1,19 @@
 return {
-  { -- Add indentation guides even on blank lines
+  {
     'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
     main = 'ibl',
-    opts = {},
+    opts = {
+      indent = {
+        char = '▏', -- Use a thick vertical line (change as desired)
+      },
+    },
+    config = function()
+      -- Initialize the plugin using `setup()`
+      require('ibl').setup {
+        indent = {
+          char = '▏', -- Set thick line character
+        },
+      }
+    end,
   },
 }
